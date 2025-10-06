@@ -20,11 +20,15 @@ export default function LoginScreen() {
 				const q = query(usuariosRef, where('correo', '==', correo), where('contrasena', '==', contrasena));
 				const querySnapshot = await getDocs(q);
 				if (!querySnapshot.empty) {
+<<<<<<< HEAD
 					// Obtener el nombre del usuario logeado
 					const userData = querySnapshot.docs[0].data();
 					const nombreCompleto = `${userData.nombres} ${userData.apellidos}`;
 					await AsyncStorage.setItem('userName', nombreCompleto);
 					router.push('/perfil-usuario');
+=======
+					router.push('/pagina-principal');
+>>>>>>> d62f9637311f5c769428bb71cd1529bb46f857df
 				} else {
 					setErrorLogin('Correo o contraseña incorrectos.');
 				}
